@@ -266,6 +266,9 @@ img {
 }
 
 .features-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid #8e8f99;
   border-radius: 4px;
   width: 264px;
@@ -275,7 +278,6 @@ img {
 }
 
 .feature-icon {
-  margin: 24px 102px;
 }
 
 .features-caption {
@@ -465,7 +467,6 @@ img {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
-  margin-bottom: 8px;
 }
 .portfolio-description {
   font-weight: 400;
@@ -493,7 +494,7 @@ img {
   text-transform: uppercase;
   text-decoration: none;
   display: block;
-  margin-bottom: 16px;
+  margin-bottom:;
 }
 
 .footer-slogan-box {
