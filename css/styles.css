@@ -557,7 +557,7 @@ img {
 }
 
 .subscriptions {
-  margin-left: auto;
+  margin-left: 80px;
 }
 
 .footer-form {
@@ -576,7 +576,7 @@ img {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   outline: transparent;
   background-color: transparent;
-  color: #f4f4fd;
+  color: #fff;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   font-weight: 400;
   font-size: 12px;
