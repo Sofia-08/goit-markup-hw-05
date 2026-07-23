@@ -322,14 +322,14 @@ img {
     max-width: 1440px;
     background-image:
       linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-      url(../images/Hero/people-office\ 1_desk@1x.jpg);
+      url(../images/Hero/Dark-bg_desk@1x.jpg);
   }
 
   @media (min-resolution: 192dpi), (min-resolution: 2dppx) {
     .hero {
       background-image:
         linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-        url(../images/Hero/people-office\ 1_desk@2x.jpg);
+        url(../images/Hero/Dark-bg_desk@2x.jpg);
     }
   }
 }
@@ -703,6 +703,15 @@ img {
 @media only screen and (min-width: 1158px) {
   .portfolio-item {
     width: calc((100% - 24px * 2) / 3);
+    box-shadow: none;
+  }
+
+  .portfolio-item:hover,
+  .portfolio-item:focus {
+    box-shadow:
+      0 2px 1px 0 rgba(46, 47, 66, 0.08),
+      0 1px 1px 0 rgba(46, 47, 66, 0.16),
+      0 1px 6px 0 rgba(46, 47, 66, 0.08);
   }
 }
 
@@ -724,14 +733,8 @@ img {
   }
 }
 
-.portfolio-item:hover {
-  box-shadow:
-    0 2px 1px 0 rgba(46, 47, 66, 0.08),
-    0 1px 1px 0 rgba(46, 47, 66, 0.16),
-    0 1px 6px 0 rgba(46, 47, 66, 0.08);
-}
-
-.portfolio-item:hover .overlay {
+.portfolio-item:hover .overlay,
+.portfolio-item:focus .overlay {
   transform: translateY(0);
 }
 
@@ -1217,17 +1220,39 @@ img {
   top: 0;
   left: 0;
   transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
   background-color: #fff;
-  padding: 72px 16px 40px;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  transition:
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibillity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
 }
 
 .mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
   transform: translateX(0);
+}
+
+.mobile-menu-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 72px 24px 40px 16px;
 }
 
 .mobile-menu-btn {
